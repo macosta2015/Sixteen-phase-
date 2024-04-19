@@ -302,6 +302,14 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
 
 
+
+
+
+
+
+
+
+
         await newPage.evaluate(() => {
             document.addEventListener('mousemove', (event) => {
                 console.log(`Mouse coordinates: X = ${event.clientX}, Y = ${event.clientY}`);
