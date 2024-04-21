@@ -295,6 +295,93 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
 
 
 
+        //SELECT SKETCH TO CLICK OR UNCLICK, THIS CODE IS REALLY IMPORTANT
+        console.log('Waiting 10 seconds.');
+        console.log('SELECTING ITEM 5 ON THE LIST.');
+        await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
+        await newPage.evaluate(() => {
+            const thirdButton = document.querySelectorAll('.os-list-item-name')[5];
+            thirdButton.click();
+            if (thirdButton) {
+                thirdButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+            } else {
+                console.error('Third button not found.');
+            }
+        });
+
+
+
+        ////////////////////
+        await waitForEnter();
+        ////////////////////
+
+
+
+
+
+        //SELECT SKETCH TO CLICK OR UNCLICK, THIS CODE IS REALLY IMPORTANT
+        console.log('Waiting 10 seconds.');
+        console.log('SELECTING ITEM 5 ON THE LIST.');
+        await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
+        await newPage.evaluate(() => {
+            const thirdButton = document.querySelectorAll('.os-list-item-name')[5];
+            thirdButton.click();
+            if (thirdButton) {
+                thirdButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+            } else {
+                console.error('Third button not found.');
+            }
+        });
+
+
+
+
+
+        //EDIT
+        //ALL THE FOLLOWING CODE NEEDS TO GO TOGETHER
+        console.log('Waiting 10 seconds.');
+        console.log('clickButtonByIndex');
+        console.log('editIntoSketchFunction');
+        await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 5
+        //ALL THE CODE TOGETHER
+        const desiredIndex4 = 8; // IMPORTANT (NEEDS TO BE THE SAME AS THE SELECTOR) Or any other desired index
+        await clickButtonByIndex(newPage, desiredIndex4);
+        //EDIT
+        await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 5
+        // const selector3 = 'div[data-id="yyHiDTMWflCzpmJN"]'; // Replace with the appropriate selector //ORIGINAL
+        // const selector4 = 'div[data-id="AJC+8X/uU1MWWXEK"]'; // Replace with the appropriate selector
+        const selector4 = 'div[data-id="yyHiDTMWflCzpmJN"]'; // Replace with the appropriate selector
+        // const title4 = 'Second Sketch'; // Replace with the desired title
+        const title4 = 'Third Sketch'; // Replace with the desired title
+        const editOptions6 = await performRightClickOptionByTitle(newPage, selector4, title4);
+        console.log(editOptions6);
+        //NEED TO ADD THE EDIT FUNCTION HERE, LIKE pasteIntoSketchFunction OR copySketchFunction
+        editIntoSketchFunction(editOptions6, newPage);
+        await new Promise(resolve => setTimeout(resolve, 40000)); // Wait for 10 seconds
+        console.log('Waited for 40 seconds.'); console.log('AFTER THE CODE RUNS.');
+
+
+
+
+
+
+
+        ////////////////////
+        console.log('WAITING FOR USER TO CLICK ENTER')
+        await waitForEnter();
+        console.log('USER CLICKED ENTER')
+        ////////////////////
+        await searchAndClickTransform(newPage);
+        console.log('After waiting for the transform function')
+
+
+
+
+
+        ////////////////////
+        await waitForEnter();
+        ////////////////////
+
 
 
 
